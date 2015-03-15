@@ -8,4 +8,4 @@ f = open(fName,'w')
 f.write("MoistureData:\n")
 
 def sendData(data):
-    f.write(str(data) + ", ")
+    f.write(str(data) + "\n")
