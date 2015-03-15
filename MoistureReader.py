@@ -25,6 +25,6 @@ while 1:
             ready = 1
             
     else:
-        print "Starting to collect moisture data."
+        '''print "Starting to collect moisture data."'''
         response = ser.readline()
         print(response)
