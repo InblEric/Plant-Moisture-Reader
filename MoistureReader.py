@@ -1,5 +1,6 @@
 import serial
 import time
+import WriteMoistureToFile as writer
 
 '''set up the serial connection speed'''
 ser = serial.Serial('/dev/ttyACM0', 9600)
@@ -28,3 +29,4 @@ while 1:
         '''print "Starting to collect moisture data."'''
         response = ser.readline()
         print(response)
+        '''writer.sendData(response)'''
