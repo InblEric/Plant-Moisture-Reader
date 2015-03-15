@@ -29,5 +29,4 @@ while 1:
         '''print "Starting to collect moisture data."'''
         response = ser.readline()
         print(response)
-        time.sleep(10)
         writer.sendData(response)
