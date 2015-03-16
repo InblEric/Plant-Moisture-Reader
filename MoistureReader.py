@@ -15,6 +15,10 @@ count = 0
 cutoff = 100
 listData = []
 
+def isReasonable(num):
+    #IMPLEMENT THIS
+    return True
+
 while 1:
     if ready == 0:
         c = raw_input('Enter a char: ')
@@ -32,17 +36,19 @@ while 1:
         '''print "Starting to collect moisture data."'''
         response = ser.readline()
         print(response)
-        listData.append(float(response))
-        count += 1
+        if isReasonable(response):
+            listData.append(float(response))
+            count += 1
         
-        if count >= cutoff:
+            if count >= cutoff:
         
-            #Get average and send
-            total = 0.0
-            for value in listData:
-                total += value
-            dataAvg = float((float(total))/(float(count)))
+                #Get average and send
+                total = 0.0
+                for value in listData:
+                    total += value
+                dataAvg = float((float(total))/(float(count)))
         
-            writer.sendData(dataAvg)
-            count = 0
-            listData = []
+                writer.sendData(dataAvg)
+                count = 0
+                listData = []
+
