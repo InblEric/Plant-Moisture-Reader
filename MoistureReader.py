@@ -12,13 +12,13 @@ print "Don't provide input until light on arduino is orange."
 
 ready = 0
 count = 0
-cutoff = 100
+cutoff = 1
 listData = []
 
 def isReasonable(num):
     try:
         n = float(num)
-        if (num < 0) or (num > 1000):
+        if (n < 0) or (n > 1000):           
             return False
     except:
         return False
@@ -40,7 +40,7 @@ while 1:
     else:
         '''print "Starting to collect moisture data."'''
         response = ser.readline()
-        print(response)
+        '''print(response)'''
         if isReasonable(response):
             listData.append(float(response))
             count += 1
@@ -54,6 +54,7 @@ while 1:
                 dataAvg = float((float(total))/(float(count)))
         
                 writer.sendData(dataAvg)
+                print "writing data" + str(dataAvg)
                 count = 0
                 listData = []
 
