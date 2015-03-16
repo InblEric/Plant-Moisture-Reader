@@ -38,5 +38,5 @@ void mockSensorReading() {
 
 void moistureReading() {
   sensorValue = analogRead(sensorPin);
-  Serial.println(sensorPin);
+  Serial.println(sensorValue);
 }
