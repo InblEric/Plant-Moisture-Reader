@@ -12,7 +12,7 @@ print "Don't provide input until light on arduino is orange."
 
 ready = 0
 count = 0
-cutoff = 1
+cutoff = 100
 listData = []
 
 def isReasonable(num):
@@ -54,7 +54,7 @@ while 1:
                 dataAvg = float((float(total))/(float(count)))
         
                 writer.sendData(dataAvg)
-                print "writing data" + str(dataAvg)
+                print "writing data: " + str(dataAvg)
                 count = 0
                 listData = []
 
