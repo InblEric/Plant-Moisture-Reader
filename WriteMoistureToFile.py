@@ -8,8 +8,7 @@ f = open(fName,'w')
 f.write("MoistureData:\n")
 
 def sendData(data):
-    #INSTEAD, HOLD AN EMPTY LIST
-    #AND EVERY 100, entries, AVERAGE THAT
-    #AND WRITE THAT WITH A TIMESTAMP
-    #THEN CLEAR THE LIST AND RESET THE COUNT
-    f.write(str(data) + "\n")
+    curtime = time.localtime()
+    ts = str(curtime.tm_year) + "-" + str(curtime.tm_mon) + "-" + str(curtime.tm_mday) + ":" + str(curtime.tm_hour) + "-" + str(curtime.tm_min)
+        
+    f.write(str(data) + ", " + str(ts) + "\n")
