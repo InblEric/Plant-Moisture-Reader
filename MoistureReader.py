@@ -2,7 +2,7 @@ import serial
 import time
 
 '''set up the serial connection speed'''
-ser = serial.Serial('/dev/ttyACM1', 9600)
+ser = serial.Serial('/dev/ttyACM2', 9600)
 
 print "Don't provide input until light on arduino is orange."
 
