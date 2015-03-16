@@ -16,7 +16,12 @@ cutoff = 100
 listData = []
 
 def isReasonable(num):
-    #IMPLEMENT THIS
+    try:
+        n = float(num)
+        if (num < 0) or (num > 1000):
+            return False
+    except:
+        return False
     return True
 
 while 1:
