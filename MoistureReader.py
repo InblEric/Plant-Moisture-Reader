@@ -1,6 +1,7 @@
 import serial
 import time
 import WriteMoistureToFile as writer
+import sys
 
 '''set up the serial connection speed'''
 ser = serial.Serial('/dev/ttyACM0', 9600)
@@ -14,6 +15,16 @@ ready = 0
 count = 0
 cutoff = 100
 listData = []
+
+if(len(sys.argv)>1):
+    if(sys.argv[1] > 0):
+        try:
+            cutoff = int(sys.argv[1])
+            print "Cutoff set to " + str(cutoff) + " by argument value" 
+        except:
+            print "Bad argument value, cutoff set to " + str(cutoff) 
+    else:
+        print "Using default cutoff value of " + str(cutoff) 
 
 def isReasonable(num):
     try:
