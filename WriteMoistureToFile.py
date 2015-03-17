@@ -5,7 +5,6 @@ ts = str(localtime.tm_year) + "-" + str(localtime.tm_mon) + "-" + str(localtime.
 fName = "logs/" + str(ts)
 
 f = open(fName,'w')
-f.write("MoistureData:\n")
 
 def sendData(data):
     curtime = time.localtime()
