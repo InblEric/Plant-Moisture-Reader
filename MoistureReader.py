@@ -13,7 +13,7 @@ print "Don't provide input until light on arduino is orange."
 
 ready = 0
 count = 0
-cutoff = 100
+cutoff = 500
 listData = []
 
 if(len(sys.argv)>1):
