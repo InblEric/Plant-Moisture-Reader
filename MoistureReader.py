@@ -57,12 +57,13 @@ while 1:
             #WITH A REASONABLE VALUE
             #THE ARDUINO WILL TAKE CARE
             #OF THE SLEEPING
-            listData.append(float(response))
-            count += 1
+            
+            #listData.append(float(response))
+            #count += 1
         
-            if count >= cutoff:
+            #if count >= cutoff:
         
-                #Get average and send
+            '''    #Get average and send
                 total = 0.0
                 for value in listData:
                     total += value
@@ -71,5 +72,8 @@ while 1:
                 writer.sendData(dataAvg)
                 print "writing data: " + str(dataAvg)
                 count = 0
-                listData = []
+                listData = []'''
+            writer.sendData(float(response))
+            print "writing data: " + str(response)
+            
 
