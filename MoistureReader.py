@@ -37,7 +37,8 @@ def isReasonable(num):
 
 while 1:
     if ready == 0:
-        c = raw_input('Enter a char: ')
+        c = 'a' 
+        raw_input('Press Enter to start ')
         if len(c) == 1:
             '''send write data back to arduino'''
             ser.write(c.encode())
