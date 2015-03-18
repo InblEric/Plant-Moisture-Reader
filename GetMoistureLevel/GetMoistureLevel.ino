@@ -16,7 +16,8 @@ void loop() {
     //NOT OVER-STRESS
     //THE SENSOR
     //delay(600000); //delay for 10 minutes
-    delay(60000); //delay for 1 minute
+    //delay(60000); //delay for 1 minute
+    delay(300000); //delay for 5 minutes
   } else {
     if (Serial.available() > 0) {
       //read data from RPI
