@@ -12,6 +12,9 @@ void loop() {
   if (ready == 1) {
     //mockSensorReading();
     moistureReading();
+    //SLEEP SO AS TO
+    //NOT OVER-STRESS
+    //THE SENSOR
   } else {
     if (Serial.available() > 0) {
       //read data from RPI
