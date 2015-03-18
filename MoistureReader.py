@@ -53,6 +53,10 @@ while 1:
         response = ser.readline()
         '''print(response)'''
         if isReasonable(response):
+            #MAKE IT SO IT WRITES EVERY TIME
+            #WITH A REASONABLE VALUE
+            #THE ARDUINO WILL TAKE CARE
+            #OF THE SLEEPING
             listData.append(float(response))
             count += 1
         
