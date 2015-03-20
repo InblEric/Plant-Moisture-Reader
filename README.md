@@ -29,3 +29,7 @@ Possible things coming:
 -Automatic long-term monitor scheduling
 
 -Graphing on RPI with matplotlib
+
+Current setup:
+
+![alt tag](http://i.imgur.com/uqHtkuu.jpg)
