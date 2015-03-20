@@ -21,7 +21,11 @@ I will update with more instructions for graphing and hopefully automation for t
 watering controls, as well as instructions for the wiring (with picture).
 
 Possible things coming: 
+
 -Automatic Watering
+
 -Server on RPI with rest API to control from anywhere
+
 -Automatic long-term monitor scheduling
+
 -Graphing on RPI with matplotlib
