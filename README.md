@@ -1,6 +1,9 @@
 # Plant-Moisture-Reader
 Reads moisture level of soil in order to keep track of watering your plants.
 
+
+![alt tag](http://i.imgur.com/A4MXf7s.png)
+
 Upload the GetMoistureLevel.ino sketch to an arduino (I use an UNO).
 On a Raspberry Pi (Or any machine connected to the arduino via USB) run the python script named MoistureReader.py. (You will 
 likely have to change the location of the serial connection to the arduino on the line that has "ser = 
