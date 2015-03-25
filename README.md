@@ -4,10 +4,21 @@ Reads moisture level of soil in order to keep track of watering your plants.
 
 ![alt tag](http://i.imgur.com/A4MXf7s.png)
 
-Upload the GetMoistureLevel.ino sketch to an arduino (I use an UNO).
-On a Raspberry Pi (Or any machine connected to the arduino via USB) run the python script named MoistureReader.py. (You might 
-have to change the location of the serial connection to the arduino on the line that has "ser = 
-serial.Serial('/dev/ttyACM0', 9600)" based on which USB port you use.
+Instructions:
+
+1. Clone this repo to a Raspberry Pi (I run Debian Wheezy on mine).
+2. Download the Arduino IDE onto your Raspberry Pi.
+3. Connect your Arduino to your Raspberry Pi via USB.
+4. Verify which serial port on your Pi your Arduino is connected to (check for /dev/ttyA*)
+5. Change line 7 of MoistureReader.py (ser = serial.Serial('/dev/ttyACM0', 9600)) to use the correct serial port.
+6. Attach your moisture sensor to your Arduino as shown in the diagram above.
+7. Place moisture sensor into soil in area you would like to monitor.
+8. Upload the GetMoistureLevel sketch to your arduino.
+9. Run the MoistureReader python script on your Raspberry Pi
+10. Kill the python process when you want to stop. (Plan to make this more elegant later)
+11. Results will be written to a local /logs directory on your Pi with timestamps
+12. The higher the number, the more moisture is present.
+13. You can use whichever software you'd like to graph the data.
 
 I read a value from the moisture sensor every 5 minutes. (Based on the delay in the arduino code).
 
