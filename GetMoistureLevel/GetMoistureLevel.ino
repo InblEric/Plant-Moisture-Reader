@@ -15,8 +15,9 @@ void loop() {
     if (ready == 1) {
         //mockSensorReading();
         moistureReading();
-        count++;    
+        count++;
         if(count >= 12) {
+            //read water in bucket once an hour.
             bucketReading();
             count = 0;
         }
@@ -53,10 +54,12 @@ void mockSensorReading() {
 
 void moistureReading() {
     sensorValue = analogRead(sensorPin);
-    Serial.println(String("moisture " + sensorValue));
+    Serial.print("moisture");
+    Serial.println(sensorValue);
 }
 
 void bucketReading() {
     bucketValue = analogRead(bucketPin);
-    Serial.println(String("bucket " + bucketValue));
+    Serial.print("bucket");
+    Serial.println(bucketValue);
 }
