@@ -2,47 +2,61 @@
 int ready = 0;
 int sensorPin = A0;
 int sensorValue = 0;
+int bucketPin = A5;
+int bucketValue = 0;
+int count = 0;
 
 void setup() {
-  Serial.begin(9600);
+    Serial.begin(9600);
 }
 
 void loop() {
-  int inByte;
-  if (ready == 1) {
-    //mockSensorReading();
-    moistureReading();
-    //SLEEP SO AS TO
-    //NOT OVER-STRESS
-    //THE SENSOR
-    //delay(600000); //delay for 10 minutes
-    //delay(60000); //delay for 1 minute
-    delay(300000); //delay for 5 minutes
-  } else {
-    if (Serial.available() > 0) {
-      //read data from RPI
-      inByte = Serial.read();
+    int inByte;  
+    if (ready == 1) {
+        //mockSensorReading();
+        moistureReading();
+        count++;    
+        if(count >= 12) {
+            bucketReading();
+            count = 0;
+        }
+        delay(300000); //delay for 5 minutes
+    } else {
+        if (Serial.available() > 0) {
+            //read data from RPI
+            inByte = Serial.read();
     
-      //send data to RPI
-      Serial.write(inByte);
-      Serial.print(" = ");
-      Serial.print(inByte);  
-      ready = 1;      
-    
+            //send data to RPI
+            Serial.write(inByte);
+            Serial.print(" = ");
+            Serial.print(inByte);  
+            ready = 1;          
+        }
+    } 
+}
+
+void mockBucketReading() {
+    if(random(0,2) == 0) {
+        Serial.println("We have enough water in the bucket");
+    } else {
+        Serial.println("Need more water in the bucket!");
     }
-  }
-  
 }
 
 void mockSensorReading() {
     if(random(0,2) == 0) {
-      Serial.println("We have enough water");
+        Serial.println("We have enough water in the soil");
     } else {
-      Serial.println("Need more water!");
+        Serial.println("Need more water in the soil!");
     }
 }
 
 void moistureReading() {
-  sensorValue = analogRead(sensorPin);
-  Serial.println(sensorValue);
+    sensorValue = analogRead(sensorPin);
+    Serial.println(String("moisture " + sensorValue));
+}
+
+void bucketReading() {
+    bucketValue = analogRead(bucketPin);
+    Serial.println(String("bucket " + bucketValue));
 }

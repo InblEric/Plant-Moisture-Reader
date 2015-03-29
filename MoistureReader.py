@@ -2,6 +2,7 @@ import serial
 import time
 import WriteMoistureToFile as writer
 import sys
+import re
 
 '''set up the serial connection speed'''
 ser = serial.Serial('/dev/ttyACM0', 9600)
@@ -35,8 +36,15 @@ while 1:
             
     else:
         response = ser.readline()
-        if isReasonable(response):
-            writer.sendData(float(response))
-            print "writing data: " + str(response)
+        if 'bucket' in response:
+            response = re.sub("[^0-9]", "", response)
+            if isReasonable(response):
+                print "bucket water level: " + str(response)          
+        elif 'moisture' in response:
+            response = re.sub("[^0-9]", "", response)
+            if isReasonable(response):            
+                writer.sendData(float(response))
+                print "writing data: " + str(response)            
+        
             
 
