@@ -22,6 +22,13 @@ Instructions:
 
 I read a value from the moisture sensor every 5 minutes. (Based on the delay in the arduino code).
 
+I added a new file to allow graphing with python. Hopefully this will run automatically and host images to a server in the 
+future, but for now it's a simple program that takes a file as a command line argument:
+$ python GraphData.py <moisture-data-file-name>
+
+It displays a graphical window plotting each data point (moisture on the vertical axis, time (in intervals of 5 minutes by 
+default) on the horizontal axis).
+
 I've been graphing values on Google Sheets. The output file can be imported directly (just make sure you name it "*.txt") to a 
 spreadsheet. Choose insert>graph and change the color of the timestamps to no color (otherwise it's impossible to read).
 
