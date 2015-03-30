@@ -20,9 +20,15 @@ Instructions:
 12. The higher the number, the more moisture is present.
 13. You can use whichever software you'd like to graph the data.
 
+Overview:
+---------
+
 I read a value from the moisture sensor every 5 minutes. (Based on the delay in the arduino code). I now also read data from a
 water sensor. This is used to measure how much water is in the bucket I will use for my reservoir. All it does right now is 
 print the value to console.
+
+Graphing:
+---------
 
 I added a new file to allow graphing with python. Hopefully this will run automatically and host images to a server in the 
 future, but for now it's a simple program that takes a file as a command line argument:
@@ -34,6 +40,7 @@ default) on the horizontal axis).
 You can graph the raw data in excel or google sheets if you prefer (or whatever you want).
 
 Future plans: 
+-------------
 
 -Automatic Watering
 
@@ -46,5 +53,6 @@ Future plans:
 -Automatic graphing on RPI with matplotlib
 
 Current setup:
+--------------
 
 ![alt tag](http://i.imgur.com/uqHtkuu.jpg)
