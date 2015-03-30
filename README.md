@@ -4,8 +4,8 @@ Reads moisture level of soil in order to keep track of watering your plants.
 
 ![alt tag](http://i.imgur.com/A4MXf7s.png)
 
-Instructions:
--------------
+Setup:
+------
 
 1. Clone this repo to a Raspberry Pi (I run Debian Wheezy on mine).
 2. Download the Arduino IDE onto your Raspberry Pi.
