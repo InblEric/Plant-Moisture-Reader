@@ -5,6 +5,7 @@ Reads moisture level of soil in order to keep track of watering your plants.
 ![alt tag](http://i.imgur.com/A4MXf7s.png)
 
 Instructions:
+-------------
 
 1. Clone this repo to a Raspberry Pi (I run Debian Wheezy on mine).
 2. Download the Arduino IDE onto your Raspberry Pi.
@@ -16,9 +17,16 @@ Instructions:
 8. Upload the GetMoistureLevel sketch to your arduino.
 9. Run the MoistureReader python script on your Raspberry Pi
 10. Kill the python process when you want to stop. (Plan to make this more elegant later)
+
+
+
+
+    $ python MoistureReader.py
+    
+10. Kill the python process when you want to stop. (Plan to make this more elegant later)
 11. Results will be written to a local /logs directory on your Pi with timestamps
 12. The higher the number, the more moisture is present.
-13. You can use whichever software you'd like to graph the data.
+13. You can use whichever software you'd like to graph the data, or you can see the graphing section below.
 
 Overview:
 ---------
@@ -32,7 +40,8 @@ Graphing:
 
 I added a new file to allow graphing with python. Hopefully this will run automatically and host images to a server in the 
 future, but for now it's a simple program that takes a file as a command line argument:
-$ python GraphData.py <moisture-data-file-name>
+
+    $ python GraphData.py <moisture-data-file-name>
 
 It displays a graphical window plotting each data point (moisture on the vertical axis, time (in intervals of 5 minutes by 
 default) on the horizontal axis).
