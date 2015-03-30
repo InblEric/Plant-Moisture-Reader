@@ -15,18 +15,16 @@ Instructions:
 6. Attach your moisture sensor to your Arduino as shown in the diagram above.
 7. Place moisture sensor into soil in area you would like to monitor.
 8. Upload the GetMoistureLevel sketch to your arduino.
-9. Run the MoistureReader python script on your Raspberry Pi
-10. Kill the python process when you want to stop. (Plan to make this more elegant later)
+9. Run the following command on your Raspberry Pi
 
-
-
+Execute:
+--------
 
     $ python MoistureReader.py
-    
-10. Kill the python process when you want to stop. (Plan to make this more elegant later)
-11. Results will be written to a local /logs directory on your Pi with timestamps
-12. The higher the number, the more moisture is present.
-13. You can use whichever software you'd like to graph the data, or you can see the graphing section below.
+
+Kill the python process when you want to stop. (Plan to make this more elegant later). Results will be written to a local 
+/logs directory on your Pi with timestamps. The higher the number, the more moisture is present. You can use whichever 
+software you'd like to graph the data, or you can see the graphing section below.
 
 Overview:
 ---------
