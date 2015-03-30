@@ -20,7 +20,9 @@ Instructions:
 12. The higher the number, the more moisture is present.
 13. You can use whichever software you'd like to graph the data.
 
-I read a value from the moisture sensor every 5 minutes. (Based on the delay in the arduino code).
+I read a value from the moisture sensor every 5 minutes. (Based on the delay in the arduino code). I now also read data from a
+water sensor. This is used to measure how much water is in the bucket I will use for my reservoir. All it does right now is 
+print the value to console.
 
 I added a new file to allow graphing with python. Hopefully this will run automatically and host images to a server in the 
 future, but for now it's a simple program that takes a file as a command line argument:
@@ -29,24 +31,19 @@ $ python GraphData.py <moisture-data-file-name>
 It displays a graphical window plotting each data point (moisture on the vertical axis, time (in intervals of 5 minutes by 
 default) on the horizontal axis).
 
-I've been graphing values on Google Sheets. The output file can be imported directly (just make sure you name it "*.txt") to a 
-spreadsheet. Choose insert>graph and change the color of the timestamps to no color (otherwise it's impossible to read).
+You can graph the raw data in excel or google sheets if you prefer (or whatever you want).
 
-Maybe excel will do a better job of graphing and actually label the horizontal axis instead of spamming the entire graph with 
-annotations but I'll have to look into that later.
-
-I will update with more instructions for graphing and hopefully automation for that sort of thing and potentially automatic 
-watering controls, as well as instructions for the wiring (with picture).
-
-Possible things coming: 
+Future plans: 
 
 -Automatic Watering
 
--Server on RPI with rest API to control from anywhere
+-Automatic email to remind user to fill water reservoir
+
+-Server on RPI with rest API to control/monitor from anywhere
 
 -Automatic long-term monitor scheduling
 
--Graphing on RPI with matplotlib
+-Automatic graphing on RPI with matplotlib
 
 Current setup:
 
